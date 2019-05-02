@@ -1,0 +1,116 @@
+﻿<Window
+    x:Class="HemmingsCoder.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:HemmingsCoder"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Hemming`s Coder"
+    Width="600"
+    Height="480"
+    mc:Ignorable="d">
+    <Grid Background="Yellow">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Column="0"
+            Margin="0,0,2,0"
+            Background="Black">
+            <TextBlock
+                Height="40"
+                Margin="30,90,30,30"
+                Background="Black"
+                FontFamily="Verdana"
+                FontSize="16"
+                Foreground="White"
+                Text="Введите двоичную комбинацию:"
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
+            <TextBox
+                x:Name="EnterTextBox"
+                Height="30"
+                Margin="30,-20,30,30"
+                VerticalContentAlignment="Center"
+                Background="Honeydew"
+                BorderBrush="#2080ba"
+                BorderThickness="3"
+                FontFamily="Consolas"
+                FontSize="18"
+                KeyDown="EnterTextBox_OnKeyDown" />
+            <RadioButton
+                x:Name="roundNoError"
+                Height="20"
+                Margin="30,0"
+                Checked="RoundDoubleError_OnChecked"
+                Content="Не добавлять ошибок."
+                FontSize="14"
+                Foreground="White"
+                GroupName="IsError"
+                IsChecked="False"
+                IsThreeState="False" />
+            <RadioButton
+                x:Name="roundError"
+                Height="20"
+                Margin="30,0"
+                Checked="RoundDoubleError_OnChecked"
+                Content="Добавить одиночную ошибку."
+                FontSize="14"
+                Foreground="White"
+                GroupName="IsError"
+                IsChecked="False"
+                IsThreeState="False" />
+            <RadioButton
+                x:Name="roundDoubleError"
+                Height="20"
+                Margin="30,0"
+                Checked="RoundDoubleError_OnChecked"
+                Content="Добавить двойную ошибку."
+                FontSize="14"
+                Foreground="White"
+                GroupName="IsError"
+                IsChecked="False"
+                IsThreeState="False" />
+            <TextBox
+                x:Name="ErrorPossTextBox"
+                Height="30"
+                Margin="30,20,30,0"
+                VerticalContentAlignment="Center"
+                Background="DarkGray"
+                BorderBrush="#707070"
+                BorderThickness="3"
+                Focusable="False"
+                FontFamily="Consolas"
+                FontSize="18"
+                KeyDown="EnterTextBox_OnKeyDown" />
+            <Button
+                x:Name="FirstButt"
+                Height="40"
+                Margin="50,30,50,0"
+                Background="DarkGray"
+                Click="FirstButtClick"
+                Content="ЗАЮЗАТЬ КОДЕР"
+                FontFamily="Verdana"
+                FontSize="18" />
+        </StackPanel>
+        <StackPanel
+            Grid.Column="1"
+            Margin="2,0,0,0"
+            Background="Black">
+
+            <TextBlock
+                x:Name="ConsoleBlock"
+                Grid.Column="1"
+                Width="280"
+                Height="450"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="Black"
+                FontFamily="Verdana"
+                FontSize="14"
+                Foreground="White"
+                TextWrapping="Wrap" />
+        </StackPanel>
+    </Grid>
+</Window>
